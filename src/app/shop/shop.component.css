@@ -1,0 +1,20 @@
+header {
+    position: relative;
+}
+
+header button {
+    position: absolute;
+    bottom: 0;
+    right: 5vw;
+}
+
+.card-img-top {
+    object-fit: cover;
+}
+
+
+@media (min-width: 576px) {
+    .card {
+        width: 27vw;
+    }
+}

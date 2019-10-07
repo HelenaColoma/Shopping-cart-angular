@@ -1,0 +1,24 @@
+<header class="container-fluid py-5 bg-light">
+    <h1 class="text-info text-center">CART</h1>
+</header>
+
+<div class="d-sm-flex flex-row flex-wrap justify-content-around p-4">
+    <div class="card m-2" *ngFor="let prod of fullCart">
+        <img src="../../assets/{{prod.name}}.jpg" class="card-img-top" height="150px">
+        <div class="card-body">
+            <h5 class="card-title">{{ prod.name }}</h5>
+            <p class="card-text">Price: £{{ prod.price }}</p>
+            <p class="card-text">Amount: {{ prod.counter }}</p>
+            <p class="card-text">Total: £{{ prod.calcTotal() }}</p>
+            <button class="btn btn-info mr-2" (click)="buy(prod)">+</button>
+            <button class="btn btn-danger" (click)="delete(prod)">-</button>
+        </div>
+    </div>
+
+    <table class="table">
+        <tr>
+            <th class="table-info">Total price</th>
+            <td>£{{ sumPrice }}</td>
+        </tr>
+    </table>
+</div>

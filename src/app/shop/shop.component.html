@@ -1,0 +1,15 @@
+<header class="container-fluid py-5 bg-light">
+    <h1 class="text-info text-center">SHOP</h1>
+    <button class="btn btn-info text-right" [routerLink]="['/cart']">Shopping cart ({{ showCart }})</button>
+</header>
+
+<div class="d-sm-flex flex-row flex-wrap justify-content-around p-4">
+    <div class="card m-2" *ngFor="let prod of product">
+        <img src="../../assets/{{prod.name}}.jpg" class="card-img-top" height="150px">
+        <div class="card-body">
+            <h5 class="card-title">{{ prod.name }}</h5>
+            <p class="card-text">£{{ prod.price }}</p>
+            <button class="btn btn-info" (click)="buy(prod)">Add to cart</button>
+        </div>
+    </div>
+</div>
